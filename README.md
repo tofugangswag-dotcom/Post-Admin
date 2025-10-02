@@ -89,3 +89,66 @@ Screenshot : ![test2](https://i.imgur.com/YOE50Zk.png)
 
 ------------------------------------------------------------------------
 
+
+## Exercice 3
+
+### 1) Se placer dans le bon dossier
+```bash
+cd /home/pepitodelanoche/Fichier
+```
+- **cd** = *change directory* : se déplacer dans un répertoire.
+- Chemin **absolu** (il commence par `/`), donc ça marche depuis n'importe où.
+- Équivalent plus court : `cd ~/Fichier` (car `~` = ton *home*).
+
+---
+
+### 2) Créer le fichier et écrire un message
+```bash
+echo "mon message secret" > secret.txt
+```
+- **echo** affiche du texte.
+- **`>`** redirige la sortie **vers un fichier** :
+  - s'il **n'existe pas**, il est **créé** ;
+  - s'il **existe**, il est **écrasé** (remplacé).
+- Variante pour **ajouter** sans écraser : `>>`
+
+Vérification possible :
+```bash
+cat secret.txt
+```
+
+---
+
+### 3) Restreindre les permissions au propriétaire
+```bash
+chmod 600 secret.txt
+```
+- **chmod** : change les droits (permissions) du fichier.
+- **600** = `rw-------`
+  - **r** (read = lire), **w** (write = écrire), **x** (execute = exécuter)
+  - **Propriétaire** : `rw` (lecture + écriture)
+  - **Groupe** : `---` (aucun droit)
+  - **Autres** : `---` (aucun droit)
+- Équivalent en notation symbolique : `chmod u=rw,go= secret.txt`
+
+---
+
+### 4) Vérifier les droits du fichier
+```bash
+ls -l secret.txt
+```
+- **ls -l** : liste détaillée (droits, propriétaire, groupe, taille, date).
+- Sortie attendue similaire à :
+  ```
+  -rw------- 1 pepitodelanoche pepitodelanoche 18 Oct  2 11:17 secret.txt
+  ```
+  - Le premier caractère `-` = fichier (vs `d` pour **d**ossier).
+  - `rw-------` = droits correspondant à **600**.
+  - Les deux champs suivants sont le **propriétaire** et le **groupe**.
+
+------------------------------------------------------------------------
+
+Screenshot : ![test2](https://i.imgur.com/0qwUoe0.png)
+
+
+------------------------------------------------------------------------
