@@ -43,7 +43,7 @@ Depuis `~/fichier`, on copie le fichier caché `.Coucou` dans le répertoire
 parent (le home dans ce cas) :
 
 ``` bash
-cp .Coucou ..
+cp .Coucou .. ou cp .Coucou /home/pepitodelanoche
 ```
 
 Ensuite, dans le répertoire courant (home), on le renomme :
