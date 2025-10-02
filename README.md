@@ -1,4 +1,4 @@
-# README -- Exercice 1
+# README
 
 ## Exercice 1
 
