@@ -56,3 +56,36 @@ mv .Coucou .Coucoucou
 
 Screenshot : ![test](https://i.imgur.com/VVm7VjP.png)
 
+
+------------------------------------------------------------------------
+
+
+## Exercice 2
+
+### 1) Lister `/etc` dans `log.txt`
+```bash
+ls /etc > log.txt
+```
+- `>` redirige la sortie de la commande vers le fichier `log.txt` (il sera créé s’il n’existe pas).
+
+### 2) Ajouter les 10 dernières lignes du syslog
+```bash
+tail -n 10 /var/log/syslog >> log.txt
+```
+- `tail -n 10` prend les 10 dernières lignes.
+- `>>` **ajoute** à la fin de `log.txt` (n'écrase pas).
+
+### 3) Afficher uniquement les lignes contenant "error"
+```bash
+grep -i "error" log.txt
+```
+- `-i` ignore la casse (`error`, `Error`, `ERROR`).
+
+
+------------------------------------------------------------------------
+
+Screenshot : ![test2](https://i.imgur.com/YOE50Zk.png)
+
+
+------------------------------------------------------------------------
+
