@@ -153,3 +153,37 @@ Screenshot :
 
 
 ------------------------------------------------------------------------
+
+# Exercices Intermédiaire 1
+
+### 1) Ouvrir **htop** et trier par mémoire
+```bash
+htop
+```
+- Dans *htop*, j’ai trié sur la colonne **MEM%** pour inverser l’ordre de tri.  
+- En tri decroissant, le processus qui consomme le **plus** de RAM est **en haut** de la liste.  
+- ici le PID du processus le plus haut est 2256 
+
+---
+
+### 2) Changer la priorité (*renice*) d’un processus
+```bash
+sudo renice -n 0 -p 4452
+```
+- J’ai ciblé le PID **4452**.  
+- La sortie a affiché : *old priority 0, new priority 0* → cela signifie que la **priorité était déjà à 0**, donc **pas de changement**.
+
+---
+
+### 3) Terminer un processus par son PID
+```bash
+sudo kill 4452
+```
+
+
+------------------------------------------------------------------------
+
+Screenshot : 
+![test4](https://i.imgur.com/jdVCMiM.png) 
+
+------------------------------------------------------------------------
