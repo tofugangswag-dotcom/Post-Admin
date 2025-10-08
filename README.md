@@ -187,3 +187,41 @@ Screenshot :
 ![test4](https://i.imgur.com/jdVCMiM.png) 
 
 ------------------------------------------------------------------------
+
+
+# Exercice Intermédiaire 2
+
+
+
+## 1) Créer le script
+```bash
+nano /home/pepitodelanoche/backups/backup_docs.sh
+```
+Contenu :
+```bash
+mkdir -p /home/pepitodelanoche/backups
+cp -a /home/pepitodelanoche/Documents/ /home/pepitodelanoche/backups/
+```
+> `mkdir -p` crée le dossier s'il n'existe pas.  
+> `Documents/` (slash) = copie **le contenu** de `Documents` *dans* `backups/`.
+
+---
+
+## 2) Planifier avec cron (tous les jours à 02:00)
+```bash
+crontab -e
+```
+Ajouter cette ligne :
+```
+0 2 * * * sh /home/pepitodelanoche/backups/backup_docs.sh
+```
+
+---
+
+
+------------------------------------------------------------------------
+
+Screenshot : 
+![test5](https://i.imgur.com/SZtLcBg.png)
+
+------------------------------------------------------------------------
